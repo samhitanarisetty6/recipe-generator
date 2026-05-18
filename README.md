@@ -3,6 +3,9 @@
 Type in the ingredients you have on hand, and get back an LLM-generated recipe plus an
 AI-generated image of the finished dish.
 
+![Landing page](docs/screenshots/landing.png)
+![Generated recipe result](docs/screenshots/result.png)
+
 ## How it works
 
 1. The frontend (plain HTML/CSS/JS, no build step) collects a list of ingredients as tags.
