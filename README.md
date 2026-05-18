@@ -25,7 +25,8 @@ The OpenAI API key never reaches the browser — all calls go through the backen
 ## Setup
 
 ```bash
-cd backend
+git clone https://github.com/samhitanarisetty6/recipe-generator.git
+cd recipe-generator/backend
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
