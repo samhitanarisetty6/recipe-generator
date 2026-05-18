@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fridge to Fork</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header id="hero" class="hero">
+      <div class="hero-decor" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <p class="kicker">Signature</p>
+        <h1 class="hero-title">Turn your fridge<br />into dinner.</h1>
+        <p class="hero-subtitle">Tell us what you've got — we'll write the recipe and plate the photo.</p>
+      </div>
+
+      <main id="input-card" class="card input-card">
+        <label class="field-label" for="ingredient-input">Ingredients on hand</label>
+
+        <div id="tag-input" class="tag-input">
+          <div id="tag-list" class="tag-list"></div>
+          <input
+            id="ingredient-input"
+            type="text"
+            placeholder="Type an ingredient and press Enter (e.g. chicken thighs, rice, lemon)"
+            autocomplete="off"
+          />
+        </div>
+        <p class="hint">Press Enter or comma to add each ingredient. You can also paste a comma-separated list.</p>
+
+        <button id="generate-btn" type="button">Generate Recipe →</button>
+
+        <div id="error-box" class="error-box hidden"></div>
+
+        <div id="loading-box" class="loading-box hidden">
+          <div class="spinner"></div>
+          <span id="loading-text">Writing your recipe...</span>
+        </div>
+      </main>
+
+      <div id="popular-section" class="popular-section">
+        <p class="popular-kicker">Popular right now</p>
+        <div id="popular-grid" class="popular-grid"></div>
+      </div>
+    </header>
+
+    <section id="result" class="result-grid hidden">
+      <aside class="card ingredients-panel">
+        <div class="panel-header">
+          <h2>Ingredients</h2>
+          <span id="recipe-servings" class="servings-pill hidden"></span>
+        </div>
+        <ul id="recipe-ingredients" class="ingredient-list"></ul>
+
+        <div class="meta-row">
+          <div class="meta-block">
+            <span class="meta-icon meta-icon-time">⏱</span>
+            <span class="meta-label">Time</span>
+            <span class="meta-value" id="meta-preptime">—</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-icon meta-icon-count">📋</span>
+            <span class="meta-label">Ingredients</span>
+            <span class="meta-value" id="meta-ingredient-count">—</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-icon meta-icon-level">🔥</span>
+            <span class="meta-label">Level</span>
+            <span class="meta-value" id="meta-difficulty">—</span>
+          </div>
+        </div>
+
+        <div id="substitutions-wrap" class="hidden">
+          <h3>Substitution notes</h3>
+          <ul id="recipe-substitutions" class="substitution-list"></ul>
+        </div>
+      </aside>
+
+      <div class="result-main">
+        <div class="card hero-card">
+          <div id="image-wrap" class="image-wrap hidden">
+            <img id="dish-image" alt="Generated dish" />
+          </div>
+          <div id="image-error" class="image-error hidden">Couldn't generate an image this time, but here's your recipe.</div>
+
+          <div class="hero-overlay">
+            <div class="title-card">
+              <h2 id="recipe-title"></h2>
+              <p id="recipe-description"></p>
+              <div id="recipe-tags" class="tag-row hidden"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card directions-card">
+          <h2>Directions</h2>
+          <hr />
+          <ol id="recipe-steps" class="directions-list"></ol>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
